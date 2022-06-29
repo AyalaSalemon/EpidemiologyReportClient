@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epidemiology research</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- table-row -->
+    <template id="table-row" >
+     <tr>
+     <td id="startDateTd"></td>
+     <td id="endDateTd"></td>
+     <td id="cityTd"></td>
+     <td id="locationTd"></td>   
+     <td>
+         <button>X</button>
+     </td> 
+     </tr>
+    </template>
+    <script type="module" src="../scripts/PatientReport.js"></script>
+
+</head>
+<body>
+    <input placeholder="Patient Id">
+   <div id="tableContainer"></div>
+   <div id="inputContainer"></div>
+   <button onclick="document.location.href=`LocationsView.html`">To the locations page</button>
+</body>
+<script type="module" src="../scripts/PatientReport.js"></script>
+
+</html>
