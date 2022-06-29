@@ -11,6 +11,9 @@ let patients = [
 let patient
 window.onload = function () {
     document.querySelector('input').addEventListener('change', loadUserLocations)
+    const jsonPatients=sessionStorage.getItem('patients')
+    if(jsonPatients)
+    patients=JSON.parse(jsonPatients)
 }
 //on  change id
 function loadUserLocations(event) {
@@ -103,8 +106,8 @@ function createInputs() {
 function addRowToPatient(i) {
     var temp = document.getElementById("table-row");
 
-    var startDate = patient.locations[i].startDate;
-    var endDate = patient.locations[i].endDate;
+    var startDate =new Date(patient.locations[i].startDate);
+    var endDate = new Date(patient.locations[i].endDate);
     const clonRow = temp.content.cloneNode(true);
     clonRow.getElementById("startDateTd").innerHTML = `${[startDate.getDate(),
     startDate.getMonth() + 1,
@@ -133,7 +136,7 @@ function addLocation() {
         patient = new Patient(document.querySelector('input').value)
         patient.locations.push(newLocation)
         patients.push(patient)
-        createLocationsTableTitels()
+        createTitels()
     }
     else {
         patient.locations.push(newLocation)
@@ -158,4 +161,3 @@ function deleteLocation(id, i) {
 }
 
 
-////////////////
