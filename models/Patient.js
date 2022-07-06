@@ -9,6 +9,6 @@ export class Patient {
         this.locations.push(location)
     }
     deleteLocation(id) {
-        this.locations = this.locations.filter(loc => loc.id == id)
+        this.locations = this.locations.filter(rep => rep.id == id)
     }
 }
